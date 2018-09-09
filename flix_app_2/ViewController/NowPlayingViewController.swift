@@ -25,6 +25,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         self.tableView.rowHeight = 200
         tableView.dataSource = self
         fetchMovies()
+        activityIndicator.stopAnimating()
         
         
         // Do any additional setup after loading the view.
@@ -60,7 +61,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             }
         }
         task.resume()
-        activityIndicator.stopAnimating()
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
